@@ -1,16 +1,16 @@
 #include <iostream>     // cout
-#include <stdlib.h>     // std namespace
-#include "HelloWorld.h" // our class
+#include "../include/HelloWorld.h"
 
-using namespace std;  // so we don't have to scope with std:: everywhere
+using std::cout;
+using std::endl;
+using std::string;
+using local::HelloWorld;
 
 int main() {
-    local::HelloWorld thingy;
+    HelloWorld thingy;
+    cout << thingy.getMessage() << endl;
+    thingy.setMessage("Goodbye World");
     cout << thingy.getMessage() << endl;
     return 0;
-}
-
-string local::HelloWorld::getMessage() {
-    return string("Hello, World");
 }
 

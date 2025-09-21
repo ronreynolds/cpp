@@ -1,15 +1,18 @@
-#include "HelloWorld.h"
+#include "../../main/include/HelloWorld.h"  // YUCK!!
 #include <cassert>
 
-class Test {
-public:
-    static void getMessage(local::HelloWorld& thing) {
-        assert(thing.getMessage() == "Hello, World");
-    }
-};
+namespace local {
+    class Test {
+    public:
+        static void getMessage(HelloWorld& thing) {
+            assert(thing.getMessage() == "Hello World");
+            assert(thing.setMessage("Goodbye world!").getMessage() == "Goodbye world!");
+        }
+    };
+}
 
 int main() {
     local::HelloWorld thingy;
-    Test::getMessage(thingy);
+    local::Test::getMessage(thingy);
     return 0;
 }
