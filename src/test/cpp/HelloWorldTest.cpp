@@ -14,5 +14,4 @@ namespace local {
 int main() {
     local::HelloWorld thingy;
     local::Test::getMessage(thingy);
-    return 0;
 }

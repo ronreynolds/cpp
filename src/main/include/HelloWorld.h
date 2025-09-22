@@ -1,6 +1,7 @@
 #ifndef HELLOWORLD_H
 #define HELLOWORLD_H
 
+#include <iostream>
 #include <string>
 
 namespace local {
@@ -8,6 +9,12 @@ namespace local {
     private:
         std::string message = "Hello World";
     public:
+        HelloWorld() {
+            std::cout << "created World at " << this << std::endl;
+        }
+        virtual ~HelloWorld() {
+            std::cout << "destroyed World at " << this << std::endl;
+        }
         std::string getMessage() const {
             return message;
         }
