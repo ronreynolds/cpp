@@ -1,15 +1,16 @@
-#include "HelloWorld.h"
-#include <iostream>     // cout
+#include "../include/HelloWorld.h"
+#include <iostream>
 
-using std::cout;
-using std::endl;
-using std::string;
-using local::HelloWorld;
+namespace local {
+    using std::cout;
+    using std::endl;
+    using std::string;
 
-
-int main() {
-    HelloWorld thingy;
-    cout << thingy.getMessage() << endl;
-    thingy.setMessage("Goodbye World");
-    cout << thingy.getMessage() << endl;
+    int HelloWorld::main(int argc, char** argv) {
+        HelloWorld thingy;
+        cout << thingy.getMessage() << endl;
+        thingy.setMessage("Goodbye World");
+        cout << thingy.getMessage() << endl;
+        return 0;
+    }
 }

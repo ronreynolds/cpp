@@ -6,7 +6,6 @@
 
 namespace local {
     class HelloWorld {
-    private:
         std::string message = "Hello World";
     public:
         HelloWorld() {
@@ -22,6 +21,7 @@ namespace local {
             message = newMessage;
             return *this;
         }
+        static int main(int, char**);
     };
 }
 
